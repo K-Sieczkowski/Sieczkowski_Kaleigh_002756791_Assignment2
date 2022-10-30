@@ -4,6 +4,8 @@
  */
 package assignment2_hospitalmodel.person;
 
+import assignment2_hospitalmodel.locationManagement.House;
+
 /**
  *
  * @author ksiec
@@ -14,19 +16,23 @@ public class Person {
     private String id;
     private String dob;
     private int age;
-    private String gender;
-    private String ethnicity;
     private String phoneNumber;
+    private String emailAddress;
+    private String role; 
+    private House house;
 
-    //instantiating the person class
-    public Person(String n, String i, String db, int a, String g, String e, String pn){
-        name = n;
-        id = i;
-        dob = db;
-        age = a;
-        gender = g;
-        ethnicity = e;
-        phoneNumber = pn;
+    
+    public void addHouse(House hs){
+        this.house = hs;
+    }
+    
+    public Person updatePerson(String n, String i, String db, int a, String pn){
+        setName(n);
+        setId(i);
+        setDob(db);
+        setAge(a);
+        setPhoneNumber(pn);
+        return this; //returns itself
     }
     
     public boolean nameIsMatch(String name){
@@ -36,7 +42,7 @@ public class Person {
     }
     
     public String getPersonName(){
-        return name;
+        return getName();
     }
     
     
@@ -89,30 +95,6 @@ public class Person {
     /**
      * @return the gender
      */
-    public String getGender() {
-        return gender;
-    }
-
-    /**
-     * @param gender the gender to set
-     */
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    /**
-     * @return the ethnicity
-     */
-    public String getEthnicity() {
-        return ethnicity;
-    }
-
-    /**
-     * @param ethnicity the ethnicity to set
-     */
-    public void setEthnicity(String ethnicity) {
-        this.ethnicity = ethnicity;
-    }
 
     /**
      * @return the phoneNumber
@@ -141,4 +123,41 @@ public class Person {
     public void setId(String id) {
         this.id = id;
     }
+
+    /**
+     * @return the role
+     */
+    public String getRole() {
+        return role;
+    }
+
+    /**
+     * @param role the role to set
+     */
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public House getHouse() {
+        return house;
+    }
+
+    public void setHouse(House house) {
+        this.house = house;
+    }
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
+    }
+    
+    @Override
+    public String toString(){
+        return name;
+    }
+    
+    
 }
