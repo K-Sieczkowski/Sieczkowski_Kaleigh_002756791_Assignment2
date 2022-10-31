@@ -31,19 +31,19 @@ public class Patient {
 
     }
 
-//    public EncounterHistory addEncounterHistoryToPatient() {
-//        EncounterHistory eh = new EncounterHistory(this);
-//        addEncounterHistory(eh);
-//        return eh;
-//    }
+    public EncounterHistory addEncounterHistoryToPatient() {
+        EncounterHistory eh = new EncounterHistory(this);
+        addEncounterHistory(eh);
+        return eh;
+    }
 
    public void addEncounterHistory(EncounterHistory eh) {
         this.encounterHistory = eh;
     }
 
-//    public void addNewEncounter(Encounter e) {
-//        encounterHistory.newEncounter();
-//    }
+    public void addNewEncounter(Encounter e) {
+        encounterHistory.newEncounter();
+    }
     
     public Encounter deleteEncounter(){
         Encounter e = encounterHistory.getCurrentEncounter();

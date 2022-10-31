@@ -18,6 +18,10 @@ public class Encounter {
     private String date;
     private int id;
 
+    public Encounter(EncounterHistory eh){
+        encounterHistory = eh;
+    }
+    
     public void newChiefComplaint(String s) {
         chiefComplaint = new ChiefComplaint(s);
     }

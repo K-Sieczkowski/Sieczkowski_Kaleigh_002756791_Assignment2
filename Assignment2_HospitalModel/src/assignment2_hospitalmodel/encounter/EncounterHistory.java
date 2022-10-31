@@ -27,10 +27,12 @@ public class EncounterHistory {
     }
 
     public Encounter newEncounter() {
-        Encounter e = new Encounter();
+        Encounter e = new Encounter(this);
+        currentEncounter = e; // looking at the encoutner that is subject to the diagnosis
         this.encounters.add(e);
         return e;
     }
+    
 
     public Encounter getCurrentEncounter() {
         return currentEncounter;
